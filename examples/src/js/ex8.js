@@ -1,0 +1,148 @@
+FusionCharts.ready(function () {
+    var complete_data = [
+        {
+            label: "Bakersfield Central",
+            category: "Retail",
+            value: "880000",
+            city: "NYC"
+        },
+        {
+            label: "Garden Groove harbour",
+            category: "General",
+            value: "730000",
+            city: "London"
+        },
+        {
+            label: "Los Angeles Topanga",
+            value: "590000",
+            category: "Retail",
+            city: "NYC"
+        },
+        {
+            label: "Compton-Rancho Dom",
+            value: "520000",
+            category: "Retail",
+            city: "NYC"
+        },
+        {
+            label: "Daly City Serramonte",
+            value: "330000",
+            category: "General",
+            city: "Mumbai"
+        }
+    ];
+    var col_chart_dataSource = {
+        chart: {
+            caption: "Harry's SuperMart",
+            subCaption: "Top 5 stores in last month by revenue",
+            theme:"ocean"
+        },
+        data: complete_data
+    };
+
+    var pie_chart_dataSource = {
+        chart: {
+            caption: "Categories of Harry's SuperMart",
+            theme:"ocean",
+            enablemultislicing: "0"
+        },
+        data: [
+            {
+                label: "General",
+                value: 0
+            },
+            {
+                label: "Retail",
+                value: 0
+            }
+        ]
+    };
+    for (var i=0,len=complete_data.length ; i<len ; i++) {
+        if (complete_data[i].category == "General") {
+            pie_chart_dataSource.data[0].value += 1;
+        }
+        else {
+            pie_chart_dataSource.data[1].value += 1;
+        }
+    }
+    var FCApp = React.createClass({
+        getInitialState: function () {
+            return {
+                filter_value: '',
+                event_target: ''
+            };
+        },
+        handleUserInput: function (category_mart, event_target) {
+            this.setState(function () {
+                return {
+                    filter_value: category_mart,
+                    event_target: event_target
+                }
+            });
+        },
+        render: function() {
+            var that = this
+                , rows = [];
+
+            // Initialize configurations for FusionCharts
+            var props_col_chart = {
+                id: "column_chart",
+                renderAt: "column_chart_container",
+                className: "inline_div",
+                type: "column2d",
+                dataFormat: "json",
+                dataSource: col_chart_dataSource,
+                impactedBy: ['pie_chart'], //***
+                eventTarget: this.state.event_target,
+                width:300,
+                heigth:150
+            };
+            var props_pie_chart = {
+                type: "pie2D",
+                id: "pie_chart",
+                renderAt: "pie_chart_container",
+                className: "inline_div",
+                dataFormat: "json",
+                defaultCenterLabel: "Total revenue: $64.08K",
+                eventTarget: this.state.event_target,
+                dataSource: pie_chart_dataSource,
+                width:400,
+                heigth:300,
+                events: {
+                    slicingStart: function (evtObj, argObj) {
+                        if (argObj.slicedState == false) {
+                            that.handleUserInput(argObj.data.categoryLabel, evtObj.sender.id);
+                        }
+                        else {
+                            that.handleUserInput('',evtObj.sender.id);
+                        }
+                    }
+                }
+            };
+            if (that.state.filter_value && that.state.filter_value.length != 0) {
+
+                complete_data.forEach(function(mart) {
+                    if (mart.category == that.state.filter_value) {
+
+                        rows.push(mart);
+                    }
+                });
+                props_col_chart.dataSource.data = rows;
+            }
+            else {
+                props_col_chart.dataSource.data = complete_data;
+            }
+            return (
+                <div id='fc_dashboard'>
+                    <react_fc.FusionCharts {...props_pie_chart} />
+                    <react_fc.FusionCharts {...props_col_chart} />
+                </div>
+            );
+        }
+    });
+
+    React.render(
+        <FCApp />,
+        document.getElementById('fc_react_app')
+    );
+});
