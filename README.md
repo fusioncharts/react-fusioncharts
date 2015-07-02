@@ -89,5 +89,5 @@ React.render(
 );
 ```
 
-### [Demos and Documentation]()
+### [Demos and Documentation](http://fusioncharts.github.io/react-fusioncharts/)
 ##### Contributors: [Pykih](https://pykih.com/)
