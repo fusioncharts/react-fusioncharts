@@ -1,18 +1,17 @@
 react-fusioncharts
 ==================
 
-This project allows to build ReactJS UI components for FusionCharts JavaScript Charting Library. It makes adding rich, interactive charting to your ReactJS Projects easy and works in the React Way.
+Simple and effective React bindings for FusionCharts JavaScript Charting Library. It helps build UI components and include interactivity for FusionCharts.
 
 ### Features
 * Add a chart using just a single ReactJS component
-* Auto-updates your chart object on modifying the the dataSource
-* Option to include interactivity in and between charts or the dashboard itself
+* Auto-updates your chart object on modifying the dataSource
+* Option to include interactivity between charts
 * Offers advanced control by giving you access to full FusionCharts object
 * Has variety of ways to add a chart, from JSON URL to Props Array Binding
 
 ### Examples
-We have several examples <a href="">on our github website</a>. Here is the syntax for rendering a FusionChart.
-
+Here is the syntax for rendering a FusionChart.
 ```javascript
 var chartConfigs = {
     type: ...,

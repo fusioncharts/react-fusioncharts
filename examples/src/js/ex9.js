@@ -1,105 +1,109 @@
 FusionCharts.ready(function () {
-    var mYdataSource = {
+    var myDataSource = {
         "chart": {
-            "caption": "Quarterly Revenue for FY2013-2014",
+            "caption": "Sales figures for top 4 chocolate brands - FY2013-2014",
             "subCaption": "Harry's SuperMart",
-            "xAxisName": "Quarter",
-            "yAxisName": "Revenue",
+            "xAxisName": "Brand",
+            "yAxisName": "Amount (In USD)",
+            "yAxisMaxValue": "120000",
             "numberPrefix": "$",
-            "paletteColors": "#0075c2",
-            "bgColor": "#ffffff",
-            "borderAlpha": "20",
-            "canvasBorderAlpha": "0",
-            "usePlotGradientColor": "0",
-            "plotBorderAlpha": "10",
-            "placevaluesInside": "1",
-            "rotatevalues": "1",
-            "valueFontColor": "#ffffff",
-            "showXAxisLine": "1",
-            "xAxisLineColor": "#999999",
-            "divlineColor": "#999999",
-            "divLineIsDashed": "1",
-            "showAlternateHGridColor": "0",
-            "subcaptionFontBold": "0",
-            "subcaptionFontSize": "14"
+            "theme": "fint",
+            "chartBottomMargin": "70",
+            "PlotfillAlpha": "0",
+            "placeValuesInside": "0",
+            "rotateValues": "0",
+            "valueFontColor": "#333333"
+        },
+        "annotations": {
+            "width": "500",
+            "height": "300",
+            "autoScale": "1",
+            "groups": [{
+                "id": "user-images",
+                "items": [{
+                    "id": "butterFinger-icon",
+                    "type": "image",
+                    "url": "../images/butterFinger.png",
+                    "x": "$xaxis.label.0.x - 30",
+                    "y": "$canvasEndY - 169",
+                    "xScale": "50",
+                    "yScale": "45",
+                }, {
+                    "id": "tom-user-icon",
+                    "type": "image",
+                    "url": "../images/snickrs.png",
+                    "x": "$xaxis.label.1.x - 26",
+                    "y": "$canvasEndY - 160",
+                    "xScale": "48",
+                    "yScale": "43"
+                }, {
+                    "id": "Milton-user-icon",
+                    "type": "image",
+                    "url": "../images/coffee_crisp.png",
+                    "x": "$xaxis.label.2.x - 22",
+                    "y": "$canvasEndY - 154",
+                    "xScale": "43",
+                    "yScale": "41"
+                }, {
+                    "id": "Brian-user-icon",
+                    "type": "image",
+                    "url": "../images/100grand.png",
+                    "x": "$xaxis.label.3.x - 22",
+                    "y": "$canvasEndY - 150",
+                    "xScale": "43",
+                    "yScale": "40"
+                }, {
+                    "id": "dyn-label-bg",
+                    "type": "rectangle",
+                    "showBorder": "1",
+                    "borderColor": "12345d",
+
+                    "fillcolor": "ffffff",
+                    "x": "$canvasEndY-245",
+                    "y": "$canvasEndY+45",
+                    "tox": "$canvasEndX+10",
+                    "toy": "$canvasEndY + 80"
+
+                }, {
+                    "id": "dyn-label",
+                    "type": "text",
+                    "fillcolor": "#000000",
+                    "fontsize": "11",
+                    "text": "Promotional activities for Butterfinger made it surpass Snickers, the highest selling brand for 3 years",
+                    "bold": "1",
+                    "wrap": "1",
+                    "wrapWidth": "350",
+                    "x": "$canvasEndY-72",
+                    "y": "$canvasEndY + 60",
+                }]
+            }]
         },
         "data": [{
-            "label": "Q1",
-            "value": "420000"
+            "label": "Butterfinger",
+            "value": "92000"
         }, {
-            "label": "Q2",
-            "value": "810000"
+            "label": "Snickers",
+            "value": "87000"
         }, {
-            "label": "Q3",
-            "value": "720000"
+            "label": "Coffee Crisp",
+            "value": "83000"
         }, {
-            "label": "Q4",
-            "value": "550000"
+            "label": "100 Grand",
+            "value": "80000"
         }]
     };
 
-    var FCApp = React.createClass({
-        getInitialState: function () {
-            return {
-                event_target: ''
-            };
-        },
-        leftAlignCaption: function () {
-            this.setState(function () {
-                return {
-                    event_target: 'left'
-                }
-            });
-        },
-        centerAlignCaption: function () {
-            this.setState(function () {
-                return {
-                    event_target: 'center'
-                }
-            });
-        },
-        rightAlignCaption: function () {
-            this.setState(function () {
-                return {
-                    event_target: 'right'
-                }
-            });
-        },
-        render: function() {
-            var that = this;
-
-            // Initialize configurations for FusionCharts
-            var fc_configs_object = {
-                id: "column_chart",
-                renderAt: "column_chart_container",
-                width: 600,
-                height: 400,
-                type: "column2d",
-                impactedBy: ['left','center','right'],
-                eventTarget: this.state.event_target,
-                dataSource: mYdataSource
-            };
-
-            if (that.state.event_target && that.state.event_target.length != 0) {
-                fc_configs_object.dataSource.chart.captionAlignment = that.state.event_target;
-            }
-            else {
-                fc_configs_object.dataSource.chart.captionAlignment = 'center';
-            }
-
-            return (
-                <div id='fc_dashboard'>
-                    <react_fc.FusionCharts {...fc_configs_object} />
-                    Change Caption Alignment: <input type="radio" id="left" name="captionalignment" onClick={this.leftAlignCaption}> Left </input>
-                    <input type="radio" id="center" checked name="captionalignment" onClick={this.centerAlignCaption}>Center</input>
-                    <input type="radio" id="right" name="captionalignment" onClick={this.rightAlignCaption}> Right </input>
-                </div>
-            );
-        }
-    });
+    var revenueChartConfigs = {
+        type: 'column2d',
+        renderAt: 'revenue-chart-container',
+        width: '400',
+        height: '400',
+        dataFormat: 'json',
+        dataSource: myDataSource
+    };
 
     React.render(
-        <FCApp />,
-        document.getElementById('fc_react_app')
+        <react_fc.FusionCharts {...revenueChartConfigs} />,
+        document.getElementById('chart-container')
     );
 });
