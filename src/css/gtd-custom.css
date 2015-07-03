@@ -54,19 +54,22 @@
 }
 
 #gtd-dashboard-container .block{
-	/*height:370px;*/
 	float: left;
-	/*background: blue;*/
-	/*text-align: center;*/
 }
-.cst-container{
-	width: 1301px;
+#dashboard .cst-container{
+	width: 1247px;
+	overflow-y: auto;
+}
+#dashboard #dashboard-container object {
+	width: 1247px;
+	height: 770px;
 }
 
 #gtd-dashboard-container .table_block{
+	font-family: Arial;
 	text-align: left;
 	margin-left: 5%;
-	width: 500px;
+	width: 475px;
 	margin-top: 20px;
 }
 
@@ -92,4 +95,9 @@
 
 #gtd-dashboard-container .table_right{
 	text-align: center;
+}
+
+#gtd-dashboard-container #map_chart {
+	width: 750px;
+	height: 500px;
 }

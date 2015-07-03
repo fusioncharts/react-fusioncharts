@@ -203,7 +203,7 @@ var GTDDashboard = function (options) {
 
         /** Fetch CSV data **/
         $.ajax({
-            url: 'data/globalterrorism.csv',
+            url: '../data/globalterrorism.csv',
             type: 'get',
             dataType: 'text',
             success: function(data){
@@ -393,7 +393,7 @@ var GTDDashboard = function (options) {
                     id: "attacks-column-chart",
                     renderAt: "attacks-column-chart-container",
                     type: "column2d",
-                    width: 750,
+                    width: 725,
                     height: 250,
                     dataSource: numberOfAttacksDataSource,
                     eventTarget: this.state.event_target,
@@ -450,7 +450,7 @@ var GTDDashboard = function (options) {
                     id: "casulty-pie-chart",
                     renderAt: "casulty-pie-chart-container",
                     type: "pie2d",
-                    width:500,
+                    width:475,
                     height: 500,
                     dataSource: numberOfCasualtiesDataSource,
                     eventTarget: this.state.event_target,
@@ -463,7 +463,7 @@ var GTDDashboard = function (options) {
                     id: "attacks-map",
                     renderAt: "attacks-map-container",
                     type: "Worldwithcountries",
-                    width: 750,
+                    width: 725,
                     height: 500,
                     dataSource: numberOfAttacksByCountryDataSource,
                     eventTarget: this.state.event_target,
@@ -609,7 +609,6 @@ var GTDDashboard = function (options) {
                     <div>
                         <div className="block">
                             <react_fc.FusionCharts {...numberOfAttacksByCountryConfigs} />
-                            <span id="selected-country"></span>
                         </div>
                         <div id="casulty-data" className="block">
                             <react_fc.FusionCharts {...numberOfCasualtiesConfigs} />
@@ -618,7 +617,6 @@ var GTDDashboard = function (options) {
                         <hr className="hr-class"></hr>
                         <div className="block">
                             <react_fc.FusionCharts {...numberOfAttacksConfigs} />
-                            <span id="selected-year"></span>
                         </div>
                         <div className="block">
                             <p className="gangnames_header">ATTACKS BY TOP 5 TERRORIST ORGANIZATIONS</p>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="../src/css/gtd-custom.css">
+    <script type="text/javascript" src="../bower_components/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="../bower_components/react/react-with-addons.js"></script>
+    <script type="text/javascript" src="../bower_components/react/JSXTransformer.js"></script>
+    <script type="text/javascript" src="../bower_components/fusioncharts/fusioncharts.js"></script>
+    <script type="text/javascript" src="../bower_components/fusioncharts/fusioncharts.theme.zune.js"></script>
+    <script type="text/jsx" src="../bower_components/react-fusioncharts-plugin/react-fusioncharts.js"></script>
+</head>
+<body>
+	<div id="gtd-dashboard-container"></div>
+
+	<script type="text/jsx" src="../src/js/gtd-custom.js"></script>
+	<script type="text/jsx">
+		$(document).ready(function () {
+			var k = new GTDDashboard();
+			k.execute();
+		})
+	</script>
+</body>
+</html>
