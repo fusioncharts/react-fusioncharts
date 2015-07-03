@@ -5,7 +5,7 @@ var react_fc = {};
     //private scoping
     var global;
 
-    ns.FusionCharts = React.createClass({displayName: "FusionCharts",
+    ns.FusionCharts = React.createClass({
       componentWillMount: function () {
         global = this;
         global.fc_configs = global.props;
@@ -18,7 +18,7 @@ var react_fc = {};
       },
       render: function() {
         return (
-          React.createElement("div", {className: global.fc_configs.className, id: global.fc_configs.renderAt})
+          <div className={global.fc_configs.className} id={global.fc_configs.renderAt}></div>
         );
       },
       componentDidUpdate: function () {
