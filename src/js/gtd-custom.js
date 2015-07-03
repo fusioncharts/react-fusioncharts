@@ -285,7 +285,7 @@ var GTDDashboard = function (options) {
                 captionFontSize: "12",
                 captionFontFamily: '"AvenirLTStd-Heavy",sans-serif',
                 captionPosition: "top-left",
-                subCaption: "Click on a country to filter by that country",
+                subCaption: "Click on a region to filter by that country",
                 subCaptionFontSize:'10',
                 theme: "zune",
                 bgColor: "f6f6f6,f6f6f6",
@@ -430,7 +430,7 @@ var GTDDashboard = function (options) {
                                     numberOfAttacksAnnotations.addItem('yearWiseTotalAttack', {
                                         "id": "dyn-label",
                                         "type": "text",
-                                        "text": args.categoryLabel + ": " + args.value + " attacks",
+                                        "text": args.categoryLabel + ": " + args.value + ((parseInt(args.value) == 1) ? " attack" : " attacks"),
                                         "fillcolor": "#ffffff",
                                         "x": "$canvasEndX-120",
                                         "font": '"AvenirLTStd-Light",sans-serif',
@@ -502,7 +502,7 @@ var GTDDashboard = function (options) {
                                     numberOfAttacksByCountryAnnotations.addItem('countryWiseTotalAttack', {
                                         "id": "dyn-label",
                                         "type": "text",
-                                        "text": args.label + ": " + args.value + " attacks",
+                                        "text": args.label + ": " + args.value + ((parseInt(args.value) == 1) ? " attack" : " attacks"),
                                         "fillcolor": "#ffffff",
                                         "x": "$canvasEndX+590",
                                         "font": '"AvenirLTStd-Light",sans-serif',
