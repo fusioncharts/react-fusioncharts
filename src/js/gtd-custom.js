@@ -418,10 +418,10 @@ var GTDDashboard = function (options) {
                                         "id": "dyn-labelBG",
                                         "type": "rectangle",
                                         "radius": "3",
-                                        "x": "$canvasEndX-200",
+                                        "x": "$canvasEndX-245",
                                         "y": "$canvasStartY-40",
                                         "tox": "$canvasEndX",
-                                        "toy": "$canvasStartY -10",
+                                        "toy": "$canvasStartY-10",
                                         "color": "#E46A3A",
                                         "alpha": "100"
                                     }, true);
@@ -432,7 +432,7 @@ var GTDDashboard = function (options) {
                                         "type": "text",
                                         "text": args.categoryLabel + ": " + args.value + " attacks",
                                         "fillcolor": "#ffffff",
-                                        "x": "$canvasEndX-100",
+                                        "x": "$canvasEndX-120",
                                         "font": '"AvenirLTStd-Light",sans-serif',
                                         "fontsize": "14",
                                         "y": "$canvasStartY - 25"
@@ -490,9 +490,9 @@ var GTDDashboard = function (options) {
                                         "id": "dyn-labelBG",
                                         "type": "rectangle",
                                         "radius": "3",
-                                        "x": "$canvasEndX+535",
+                                        "x": "$canvasEndX+465",
                                         "y": "$canvasStartY+10",
-                                        "tox": "$canvasEndX+735",
+                                        "tox": "$canvasEndX+710",
                                         "toy": "$canvasStartY + 40",
                                         "color": "#E46A3A",
                                         "alpha": "100"
@@ -504,7 +504,7 @@ var GTDDashboard = function (options) {
                                         "type": "text",
                                         "text": args.label + ": " + args.value + " attacks",
                                         "fillcolor": "#ffffff",
-                                        "x": "$canvasEndX+635",
+                                        "x": "$canvasEndX+590",
                                         "font": '"AvenirLTStd-Light",sans-serif',
                                         "fontsize": "14",
                                         "y": "$canvasStartY + 25"
