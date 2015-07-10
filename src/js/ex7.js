@@ -31,17 +31,17 @@ FusionCharts.ready(function () {
     var FCDashboard = React.createClass({
         getInitialState: function () {
             return {
-                eventTarget: ''
+                filterSource: ''
             };
         },
         changeBackgroundColor: function () {
             this.setState({
-                event_target: 'btn_change_bg_color'
+                filterSource: 'btn_change_bg_color'
             });
         },
         changeCaptionTextAlignment: function () {
             this.setState({
-                event_target: 'btn_change_text_align'
+                filterSource: 'btn_change_text_align'
             });
         },
         render: function () {
@@ -53,13 +53,13 @@ FusionCharts.ready(function () {
                 height: 400,
                 dataFormat: "json",
                 dataSource: myDataSource,
-                eventTarget: this.state.event_target,
+                eventSource: this.state.filterSource,
                 impactedBy: ['btn_change_bg_color','btn_change_text_align']
             };
 
             // Change the column chart's attribute values
-            if (this.state.event_target && this.state.event_target.length > 0) {
-                switch (this.state.event_target) {
+            if (this.state.filterSource && this.state.filterSource.length > 0) {
+                switch (this.state.filterSource) {
                     case 'btn_change_bg_color':     props_col_chart.dataSource.chart.bgColor = "#efefef";
                                                     break;
                     case 'btn_change_text_align':   props_col_chart.dataSource.chart.captionAlignment = "left";

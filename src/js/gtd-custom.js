@@ -362,21 +362,21 @@ var GTDDashboard = function (options) {
         var GTDParent = React.createClass({
             getInitialState : function () {
                 return {
-                    country_selected: '',
-                    year_selected: '',
-                    event_target: ''
+                    countrySelected: '',
+                    yearSelected: '',
+                    filterSource: ''
                 }
             },
             filterCountry : function (selected_value, sender_id) {
                 this.setState({
-                    country_selected: selected_value,
-                    event_target : sender_id
+                    countrySelected: selected_value,
+                    filterSource : sender_id
                 });
             },
             filterYear : function (selected_value, sender_id) {
                 this.setState({
-                    year_selected: selected_value,
-                    event_target : sender_id
+                    yearSelected: selected_value,
+                    filterSource : sender_id
                 });
             },
             render: function () {
@@ -396,7 +396,7 @@ var GTDDashboard = function (options) {
                     width: 725,
                     height: 250,
                     dataSource: numberOfAttacksDataSource,
-                    eventTarget: this.state.event_target,
+                    eventSource: this.state.filterSource,
                     className:"attacks_years block",
                     impactedBy:['attacks-map'],
                     events: {
@@ -453,7 +453,7 @@ var GTDDashboard = function (options) {
                     width:475,
                     height: 500,
                     dataSource: numberOfCasualtiesDataSource,
-                    eventTarget: this.state.event_target,
+                    eventSource: this.state.filterSource,
                     impactedBy:['attacks-map','attacks-column-chart'],
                     className:"casulty"
                 };
@@ -466,7 +466,7 @@ var GTDDashboard = function (options) {
                     width: 725,
                     height: 500,
                     dataSource: numberOfAttacksByCountryDataSource,
-                    eventTarget: this.state.event_target,
+                    eventSource: this.state.filterSource,
                     className:"attack_world",
                     events: {
                         entityClick: function (event, args) {
@@ -511,7 +511,7 @@ var GTDDashboard = function (options) {
                                     }, true);
                                 };
                             if(args.value !== undefined) {
-                                that.state.year_selected = "";
+                                that.state.yearSelected = "";
                                 that.filterCountry(args.id, event.sender.id)
                                 createGroupItems();
                             }
@@ -521,8 +521,8 @@ var GTDDashboard = function (options) {
 
 
                 /** Filter data --- Column Chart for "Number of Attacks by Year" **/
-                if(that.state.country_selected &&  that.state.country_selected.length !== 0 && !that.state.year_selected) {
-                    updated_data = _where(new_data, {"country_code" : that.state.country_selected});
+                if(that.state.countrySelected &&  that.state.countrySelected.length !== 0 && !that.state.yearSelected) {
+                    updated_data = _where(new_data, {"country_code" : that.state.countrySelected});
                     updated_attack = _countBy(updated_data,function (d) {
                         return d["iyear"];
                     });
@@ -557,8 +557,8 @@ var GTDDashboard = function (options) {
                         numberOfCasualtiesConfigs.dataSource.data = []
                     }
 
-                } else if(that.state.country_selected && that.state.country_selected.length !== 0 && that.state.year_selected && that.state.year_selected.length !== 0) {
-                    updated_data_year = _where(new_data, {"iyear" : that.state.year_selected, "country_code" : that.state.country_selected});
+                } else if(that.state.countrySelected && that.state.countrySelected.length !== 0 && that.state.yearSelected && that.state.yearSelected.length !== 0) {
+                    updated_data_year = _where(new_data, {"iyear" : that.state.yearSelected, "country_code" : that.state.countrySelected});
                     var new_num_killed = _reduce(updated_data_year,function(memo,num){
                         return memo+parseInt(num.nkill);
                     },0)
@@ -580,8 +580,8 @@ var GTDDashboard = function (options) {
                         numberOfCasualtiesConfigs.dataSource.data = []
                     }
 
-                } else if (that.state.year_selected && that.state.year_selected.length !== 0) {
-                    updated_data_year = _where(new_data, {"iyear" : that.state.year_selected});
+                } else if (that.state.yearSelected && that.state.yearSelected.length !== 0) {
+                    updated_data_year = _where(new_data, {"iyear" : that.state.yearSelected});
                     var new_num_killed = _reduce(updated_data_year,function(memo,num){
                         return memo+parseInt(num.nkill);
                     },0)

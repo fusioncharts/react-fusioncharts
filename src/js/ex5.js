@@ -32,12 +32,12 @@ FusionCharts.ready(function () {
     var FCDashboard = React.createClass({
         getInitialState: function () {
             return {
-                eventTarget: ''
+                filterSource: ''
             };
         },
         handleCLick: function () {
             this.setState({
-                event_target: 'btn_update_data'
+                filterSource: 'btn_update_data'
             });
         },
         render: function () {
@@ -49,12 +49,12 @@ FusionCharts.ready(function () {
                 height: 400,
                 dataFormat: "json",
                 dataSource: myDataSource,
-                eventTarget: this.state.event_target,
+                eventSource: this.state.filterSource,
                 impactedBy: ['btn_update_data']
             };
 
             // Filter the column chart's data
-            if (this.state.event_target && this.state.event_target.length != 0) {
+            if (this.state.filterSource && this.state.filterSource.length != 0) {
                 props_col_chart.dataSource.data[2].label = "Art Supply Store";
                 props_col_chart.dataSource.data[2].value = "420000";
                 props_col_chart.dataSource.data[3].label = "P.C. Richard & Son";

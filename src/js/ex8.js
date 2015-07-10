@@ -68,15 +68,15 @@ FusionCharts.ready(function () {
     var FCApp = React.createClass({
         getInitialState: function () {
             return {
-                filter_value: '',
-                event_target: ''
+                filterValue: '',
+                filterSource: ''
             };
         },
-        handleUserInput: function (category_mart, event_target) {
+        handleUserInput: function (category_mart, source) {
             this.setState(function () {
                 return {
-                    filter_value: category_mart,
-                    event_target: event_target
+                    filterValue: category_mart,
+                    filterSource: source
                 }
             });
         },
@@ -92,8 +92,8 @@ FusionCharts.ready(function () {
                 type: "column2d",
                 dataFormat: "json",
                 dataSource: col_chart_dataSource,
-                impactedBy: ['pie_chart'], //***
-                eventTarget: this.state.event_target,
+                impactedBy: ['pie_chart'],
+                eventSource: this.state.filterSource,
                 width:300,
                 heigth:150
             };
@@ -104,7 +104,7 @@ FusionCharts.ready(function () {
                 className: "inline_div",
                 dataFormat: "json",
                 defaultCenterLabel: "Total revenue: $64.08K",
-                eventTarget: this.state.event_target,
+                eventSource: this.state.filterSource,
                 dataSource: pie_chart_dataSource,
                 width:400,
                 heigth:300,
@@ -119,10 +119,10 @@ FusionCharts.ready(function () {
                     }
                 }
             };
-            if (that.state.filter_value && that.state.filter_value.length != 0) {
+            if (that.state.filterValue && that.state.filterValue.length != 0) {
 
                 complete_data.forEach(function(mart) {
-                    if (mart.category == that.state.filter_value) {
+                    if (mart.category == that.state.filterValue) {
 
                         rows.push(mart);
                     }
