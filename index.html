@@ -506,7 +506,7 @@ React.render(
                 },
                 "ex4a": {
                     "html" :'&lt;div id="chart-container">&lt;/div>',
-                    "javascript" : 'var chartConfigs = {\n    id: "most-popular-sports-chart",\n    renderAt: "most-popular-sports-chart-container",\n    type: "column2d",\n    width:600,\n    height: 400,\n    dataFormat: "xmlurl",\n    dataSource: "data/data.xml"\n};\n\chart-container.render(\n    &lt;react_fc.FusionCharts {...chartConfigs} />,\n    document.getElementById("chart-container")\n);'
+                    "javascript" : 'var chartConfigs = {\n    id: "most-popular-sports-chart",\n    renderAt: "most-popular-sports-chart-container",\n    type: "column2d",\n    width:600,\n    height: 400,\n    dataFormat: "xmlurl",\n    dataSource: "data/data.xml"\n};\n\nReact.render(\n    &lt;react_fc.FusionCharts {...chartConfigs} />,\n    document.getElementById("chart-container")\n);'
                 },
                 "ex5": {
                     "html" :'&lt;div id="chart-container">&lt;/div>',
