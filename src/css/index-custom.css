@@ -140,3 +140,8 @@ pre.code-tab {
 #jsfiddle {
   margin-top: 20px;
 }
+
+.masthead .nav>li>a, .nav>li>a:hover, .nav>li>a:focus {
+  padding-left: 10px;
+  padding-right: 10px;
+}
