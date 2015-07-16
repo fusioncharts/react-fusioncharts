@@ -46,7 +46,7 @@ pre.code-tab {
   min-height: 825px;
 }
 .list-group {
-  height: 904px;
+  height: 924px;
   overflow-y: scroll;
   border-top: 1px solid lightgrey;
   border-bottom: 1px solid lightgrey;
@@ -63,5 +63,5 @@ pre.code-tab {
 }
 
 #jsfiddle {
-  text-align: right;
+  margin-top: 20px;
 }
