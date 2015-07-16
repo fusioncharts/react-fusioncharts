@@ -2,7 +2,7 @@ body {
     overflow-x: hidden;
 }
 pre {
-    max-height: 325px;
+    max-height: 305px;
 }
 
 /* From the passportjs.org website */
@@ -60,4 +60,8 @@ pre.code-tab {
 
 .h3-spacing {
   margin-top: 40px;
+}
+
+#jsfiddle {
+  text-align: right;
 }
