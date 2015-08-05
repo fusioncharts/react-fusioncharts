@@ -1,7 +1,7 @@
 react-fusioncharts
 ==================
 
-Simple and effective React bindings for FusionCharts JavaScript Charting Library. It helps build UI components and include interactivity for FusionCharts.
+Simple ReactJS components for FusionCharts JavaScript Charting Library. It helps build UI components and include interactivity for FusionCharts.
 
 ### Features
 * Add a chart using just a single ReactJS component
