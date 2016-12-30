@@ -114,7 +114,7 @@ npm install react react-dom fusioncharts react-fusioncharts --save
 import ReactDOM from 'react-dom';
 import fusioncharts from 'fusioncharts';
 import fusioncharts from 'fusioncharts/fusioncharts.charts';
-import ReactFC from 'react-fusioncharts';
+import ReactFusionCharts from 'react-fusioncharts';
 
 var chartConfigs = {
     type: ...,
@@ -127,7 +127,7 @@ var chartConfigs = {
 <h3>Step 4: Pass Configurations and Render chart</h3>
 <p>There are two definitive ways of building a FusionChart in React.js; either it is a part of a component heirarchy or is a lone chart. For a singular FusionChart, we can choose to make a component class or directly render with the React-FusionCharts component class. The object containing the configurations is passed to the FusionCharts component as 'props':</p>
 <pre class="language-markup" ><code class="language-markup" >ReactDOM.render(
-    &lt;ReactFC {...chartConfigs} />,
+    &lt;ReactFusionCharts {...chartConfigs} />,
     document.getElementById('chart-container')
 );
 </code></pre>
@@ -136,8 +136,8 @@ var chartConfigs = {
     ..., // Rest of the React Component Code
     render: function () {
         return (
-            &lt;ReactFC {...categoryChartConfigs} />
-            &lt;ReactFC {...revenueChartConfigs} />
+            &lt;ReactFusionCharts {...categoryChartConfigs} />
+            &lt;ReactFusionCharts {...revenueChartConfigs} />
         );
     }
 });
@@ -150,7 +150,7 @@ ReactDOM.render(
 <p>We recommend following the previous method of creating an object and passing it, but these configurations can be passed separately as well:</p>
 <pre class="language-markup" >
 <code class="language-markup" >ReactDOM.render(
-    &lt;ReactFC
+    &lt;ReactFusionCharts
         type: ...,
         renderAt: ...,
         className: ...,
@@ -190,7 +190,7 @@ ReactDOM.render(
 <h3>Step 4: Pass Configurations and Render chart</h3>
 <p>There are two definitive ways of building a FusionChart in React.js; either it is a part of a component heirarchy or is a lone chart. For a singular FusionChart, we can choose to make a component class or directly render with the React-FusionCharts component class. The object containing the configurations is passed to the FusionCharts component as 'props':</p>
 <pre class="language-markup" ><code class="language-markup" >ReactDOM.render(
-    &lt;ReactFC {...chartConfigs} />,
+    &lt;ReactFusionCharts {...chartConfigs} />,
     document.getElementById('chart-container')
 );
 </code></pre>
@@ -199,8 +199,8 @@ ReactDOM.render(
     ..., // Rest of the React Component Code
     render: function () {
         return (
-            &lt;ReactFC {...categoryChartConfigs} />
-            &lt;ReactFC {...revenueChartConfigs} />
+            &lt;ReactFusionCharts {...categoryChartConfigs} />
+            &lt;ReactFusionCharts {...revenueChartConfigs} />
         );
     }
 });
@@ -213,7 +213,7 @@ ReactDOM.render(
 <p>We recommend following the previous method of creating an object and passing it, but these configurations can be passed separately as well:</p>
 <pre class="language-markup" >
 <code class="language-markup" >ReactDOM.render(
-    &lt;ReactFC
+    &lt;ReactFusionCharts
         type: ...,
         renderAt: ...,
         className: ...,
@@ -257,8 +257,8 @@ Let's create a interactive dashboard, having a parent component say 'MyApp' and 
     ...,
     render: funstion () {
         return (
-            &lt;ReactFC {...categoryChartConfigs} />
-            &lt;ReactFC {...revenueChartConfigs} />
+            &lt;ReactFusionCharts {...categoryChartConfigs} />
+            &lt;ReactFusionCharts {...revenueChartConfigs} />
         );
     }
 });
@@ -271,7 +271,7 @@ ReactDOM.render(
 <p>We recommend following the previous method of creating an object and passing it, but these configurations can be passed separately as well:</p>
 <pre class="language-markup" >
 <code class="language-markup" >ReactDOM.render(
-    &lt;ReactFC
+    &lt;ReactFusionCharts
         type: ...,
         renderAt: ...,
         className: ...,
@@ -345,8 +345,8 @@ ReactDOM.render(
         ***/
 
         return (
-            &lt;ReactFC {...categoryChartConfigs} />
-            &lt;ReactFC {...revenueChartConfigs} />
+            &lt;ReactFusionCharts {...categoryChartConfigs} />
+            &lt;ReactFusionCharts {...revenueChartConfigs} />
         );
     }
 });
@@ -392,8 +392,8 @@ ReactDOM.render(
         ***/
 
         return (
-            &lt;ReactFC {...categoryChartConfigs} />
-            &lt;ReactFC {...revenueChartConfigs} />
+            &lt;ReactFusionCharts {...categoryChartConfigs} />
+            &lt;ReactFusionCharts {...revenueChartConfigs} />
         );
     }
 });

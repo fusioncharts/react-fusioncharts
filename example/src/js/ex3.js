@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ReactFC from 'react-fusioncharts';
+import ReactFusionCharts from 'react-fusioncharts';
 import FusionCharts from 'fusioncharts';
 import charts from 'fusioncharts/fusioncharts.charts';
 import TM from 'fusioncharts/themes/fusioncharts.theme.ocean';
@@ -200,7 +200,7 @@ FusionCharts.ready(function () {
         dataSource: myDataSource
     };
     ReactDOM.render(
-        <ReactFC {...props_multi_chart} />,
+        <ReactFusionCharts {...props_multi_chart} />,
         document.getElementById('fc_react_app')
     );
 })

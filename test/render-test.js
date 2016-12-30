@@ -6,7 +6,7 @@ import expect from 'expect';
 
 import FC from 'fusioncharts';
 import charts from 'fusioncharts/fusioncharts.charts';
-import ReactFC from '../lib/ReactFusionCharts';
+import ReactFusionCharts from '../lib/ReactFusionCharts';
 
 charts(FC);
 
@@ -58,7 +58,7 @@ class FCDashboard extends React.Component {
     	/** todo: 
 		* Removing the below console.log throws error while running the test
 		*/
-    	console.log("________TESTING___________");
+    	console.log("________TESTING___________"); // eslint-disable-line
         return (
             <div>
                 <h1>Hello World!</h1>
@@ -72,7 +72,7 @@ class FCDashboard extends React.Component {
                     Height:
                     <input ref="height" name="height" onChange={this.updateSize} value={this.state.height} />                	
              	</p>
-            	<ReactFC ref="fusioncharts" {...this.state} />
+            	<ReactFusionCharts ref="fusioncharts" {...this.state} />
             	<p></p>
             </div>
         );
