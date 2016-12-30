@@ -1,8 +1,9 @@
-const execSync = require('child_process').exec;
+const execSync = require('child_process').exec,
+	  colors = require('colors/safe');
 
 var log = console,
     commands = [{
-		script: 'npm run lint',
+		script: 'eslint ./; true',
 		msg: `
 	     _    _     _   _           
 	    | |  (_)_ _| |_(_)_ _  __ _ 
@@ -11,7 +12,7 @@ var log = console,
 	                           |___/ 
        `
 	}, {
-		script: 'npm run build',
+		script: 'gulp clean && NODE_ENV=production gulp build',
 		msg: `
 	      ___                _ _ _           
 	     / __|___ _ __  _ __(_) (_)_ _  __ _ 
@@ -36,13 +37,14 @@ log = log.log;
 
 function runTests (index) {
 	var command = commands[index];
-    log(command.msg);
+    log(colors.blue(command.msg));
     execSync(command.script, (error, stdout) => {
+    	log(error);
         if (error) {
-            log(`exec error: ${error} ${stdout}`);
+            log(colors.red(`exec error: ${error} ${stdout}`));
             return;
         } else {
-	        log(`SUCCESS: ${command.script} \n ${stdout}\n`);
+	        log(colors.green(`SUCCESS: ${command.script} \n ${stdout}\n`));
 	        if (++index < commands.length) {
 		        runTests(index);
 	        }
