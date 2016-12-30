@@ -20,7 +20,6 @@ var _react = (typeof window !== "undefined" ? window['React'] : typeof global !=
 
 var _react2 = _interopRequireDefault(_react);
 
-var s;
 var FusionCharts = typeof window !== "undefined" ? window['FusionCharts'] : typeof global !== "undefined" ? global['FusionCharts'] : null;
 
 if (typeof FusionCharts === "undefined") {
