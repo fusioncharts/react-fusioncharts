@@ -1,6 +1,7 @@
 import React from 'react';
 
-var FusionCharts = (typeof window !== "undefined" ? window['FusionCharts'] :
+var ReactFC = {},
+    FusionCharts = (typeof window !== "undefined" ? window['FusionCharts'] : 
 		typeof global !== "undefined" ? global['FusionCharts'] : null);
 
 if (typeof FusionCharts === "undefined") {
@@ -73,5 +74,7 @@ class ReactFusionCharts extends React.Component {
     }
 }
 
-export default ReactFusionCharts;
+ReactFC.FusionCharts = ReactFusionCharts;
+
+export default ReactFC;
 

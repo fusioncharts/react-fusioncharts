@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ReactFusionCharts from 'react-fusioncharts';
+import react_fc from 'react-fusioncharts';
 import FusionCharts from 'fusioncharts';
 import charts from 'fusioncharts/fusioncharts.charts';
 import TM from 'fusioncharts/themes/fusioncharts.theme.ocean';
@@ -52,7 +52,7 @@ FusionCharts.ready(function () {
         }
     };
     ReactDOM.render(
-        <ReactFusionCharts {...props_column_chart} />,
+        <react_fc.FusionCharts {...props_column_chart} />,
         document.getElementById('fc_react_app')
     );
 })

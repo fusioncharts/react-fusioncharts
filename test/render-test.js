@@ -6,7 +6,7 @@ import expect from 'expect';
 
 import FC from 'fusioncharts';
 import charts from 'fusioncharts/fusioncharts.charts';
-import ReactFusionCharts from '../lib/ReactFusionCharts';
+import reactFc from '../lib/react_fc';
 
 charts(FC);
 
@@ -72,7 +72,7 @@ class FCDashboard extends React.Component {
                     Height:
                     <input ref="height" name="height" onChange={this.updateSize} value={this.state.height} />                	
              	</p>
-            	<ReactFusionCharts ref="fusioncharts" {...this.state} />
+            	<reactFc.FusionCharts ref="fusioncharts" {...this.state} />
             	<p></p>
             </div>
         );

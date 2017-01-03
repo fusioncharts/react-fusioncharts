@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ReactFusionCharts from 'react-fusioncharts';
+import react_fc from 'react-fusioncharts';
 import FusionCharts from 'fusioncharts';
 import charts from 'fusioncharts/fusioncharts.charts';
 import TM from 'fusioncharts/themes/fusioncharts.theme.fint';
@@ -113,7 +113,7 @@ FusionCharts.ready(function () {
     };
 
     ReactDOM.render(
-        <ReactFusionCharts {...revenueChartConfigs} />,
+        <react_fc.FusionCharts {...revenueChartConfigs} />,
         document.getElementById('chart-container')
     );
 });
