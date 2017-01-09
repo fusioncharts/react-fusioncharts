@@ -7,7 +7,7 @@ if (typeof FusionCharts === "undefined") {
 	FusionCharts = require('fusioncharts');
 }
 
-class ReactFusionCharts extends React.Component {
+class ReactFC extends React.Component {
     constructor (props) {
         super(props);
 
@@ -73,5 +73,5 @@ class ReactFusionCharts extends React.Component {
     }
 }
 
-export default ReactFusionCharts;
+export default ReactFC;
 

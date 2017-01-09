@@ -13,7 +13,7 @@ var gulp = require('gulp'),
     taskConfig = {
 
 		component: {
-			name: 'ReactFusionCharts',
+			name: 'ReactFC',
 			dependencies: [
 				'classnames',
 				'react',

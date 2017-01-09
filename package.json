@@ -2,7 +2,7 @@
   "name": "react-fusioncharts",
   "version": "1.0.0",
   "description": "React FusionCharts",
-  "main": "lib/ReactFusionCharts.js",
+  "main": "lib/ReactFC.js",
   "author": "FusionCharts",
   "homepage": "https://github.com/fusioncharts/react-fusioncharts",
   "repository": {

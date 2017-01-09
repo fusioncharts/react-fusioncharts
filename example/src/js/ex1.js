@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ReactFusionCharts from 'react-fusioncharts';
+import ReactFC from 'react-fusioncharts';
 import FusionCharts from 'fusioncharts';
 import charts from 'fusioncharts/fusioncharts.charts';
 import oceanIgnore from'fusioncharts/themes/fusioncharts.theme.ocean';
@@ -50,6 +50,6 @@ var myDataSource = {
 	};
 
 ReactDOM.render(
-	<ReactFusionCharts {...revenueChartConfigs} />,
+	<ReactFC {...revenueChartConfigs} />,
 	document.getElementById('chart-container')
 );

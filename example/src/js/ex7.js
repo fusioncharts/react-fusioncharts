@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ReactFusionCharts from 'react-fusioncharts';
+import ReactFC from 'react-fusioncharts';
 import FusionCharts from 'fusioncharts';
 import charts from 'fusioncharts/fusioncharts.charts';
 import TM from 'fusioncharts/themes/fusioncharts.theme.ocean';
@@ -79,7 +79,7 @@ FusionCharts.ready(function () {
 
             return (
                 <div>
-                    <ReactFusionCharts {...props_col_chart} />
+                    <ReactFC {...props_col_chart} />
                     <a  id='btn_change_bg_color'
                         onClick={this.changeBackgroundColor}
                         className="btn btn-default"

@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ReactFusionCharts from 'react-fusioncharts';
+import ReactFC from 'react-fusioncharts';
 import FusionCharts from 'fusioncharts';
 import charts from 'fusioncharts/fusioncharts.charts';
 import maps from 'fusioncharts/fusioncharts.maps';
@@ -631,15 +631,15 @@ var GTDDashboard = function (options) {
                 return (
                     <div>
                         <div className="block">
-                            <ReactFusionCharts {...numberOfAttacksByCountryConfigs} />
+                            <ReactFC {...numberOfAttacksByCountryConfigs} />
                         </div>
                         <div id="casulty-data" className="block">
-                            <ReactFusionCharts {...numberOfCasualtiesConfigs} />
+                            <ReactFC {...numberOfCasualtiesConfigs} />
                         </div>
                         <div style={{clear:"both"}}></div>
                         <hr className="hr-class"></hr>
                         <div className="block">
-                            <ReactFusionCharts {...numberOfAttacksConfigs} />
+                            <ReactFC {...numberOfAttacksConfigs} />
                         </div>
                         <div className="block">
                             <p className="gangnames_header">ATTACKS BY TOP 5 TERRORIST ORGANIZATIONS</p>

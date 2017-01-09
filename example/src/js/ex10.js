@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ReactFusionCharts from 'react-fusioncharts';
+import ReactFC from 'react-fusioncharts';
 import FusionCharts from 'fusioncharts';
 import charts from 'fusioncharts/fusioncharts.charts';
 import maps from 'fusioncharts/fusioncharts.maps';
@@ -609,7 +609,7 @@ FusionCharts.ready(function () {
         dataSource: myDataSource
     };
     ReactDOM.render(
-        <ReactFusionCharts {...fc_configs_object} />,
+        <ReactFC {...fc_configs_object} />,
         document.getElementById('fc_react_app')
     );
 });
