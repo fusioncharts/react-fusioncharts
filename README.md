@@ -1,5 +1,6 @@
-react-fusioncharts
+react-fusioncharts  [DEPRECATED]
 ==================
+Moved to: https://github.com/fusioncharts/react-fusioncharts-component
 
 Simple ReactJS components for FusionCharts JavaScript Charting Library. It helps build UI components and include interactivity for FusionCharts.
 
